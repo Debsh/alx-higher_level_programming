@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-        import hidden_4
-        temp = dir(hidden_4)
-        for i in range(len(temp)):
-            for j in range(len(temp[i])):
-                 if (temp[i][j] == '_' and temp[i][j+1] == '_'):
-                     break
-                 else:
-                     print(temp[i])
-                     break
+def magic_calculation(a, b):
+        from magic_calculation_102 import add, sub
+        if a < b:
+            c = add(a, b)
+            for i in range(4, 6):
+                 c = add(c, i)
+            return c
+         else:
+             return sub(a, b)
         
