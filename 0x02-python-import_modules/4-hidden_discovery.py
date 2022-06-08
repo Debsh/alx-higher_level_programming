@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-import hidden_4
-
-def principal():
-    for i in dir(hidden_4):
-        if not (i[0] == '_' and i[1] == '_'):
-            print(i)
-
-
 if __name__ == "__main__":
-    principal()
+        import hidden_4
+            temp = dir(hidden_4)
+                for i in range(len(temp)):
+                            for j in range(len(temp[i])):
+                                            if (temp[i][j] == '_' and temp[i][j+1] == '_'):
+                                                                break
+                                                                        else:
+                                                                                            print(temp[i])
+                                                                                                            break
