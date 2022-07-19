@@ -1,20 +1,13 @@
 #!/usr/bin/python3
-''' a class Student that defines a student
-'''
+""" Module that returns the dictionary description with a simple
+data structure for a JSON serialization of an object
+"""
 
 
-class Student:
-    '''module class student
-    '''
+def class_to_json(obj):
+    """ Function that retuns the dictionary description of an obj """
 
-    def __init__(self, first_name, last_name, age):
-        '''method __init__
-        '''
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-
-    def to_json(self):
-        '''method to_json
-        '''
-        return self.__dict__
+    res = {}
+    if hasattr(obj, "__dict__"):
+        res = obj.__dict__.copy()
+    return res_
