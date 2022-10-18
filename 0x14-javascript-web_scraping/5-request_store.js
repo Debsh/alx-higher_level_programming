@@ -1,14 +1,19 @@
 #!/usr/bin/node
-
+// 5. Loripsum
 const request = require('request');
 const fs = require('fs');
+const process = require('process');
 const url = process.argv[2];
-const filePath = process.argv[3];
+const file = process.argv[3];
 
-request(url, function (err, response, body) {
-  if (err) {
-    console.log(err);
+request.get(url, (err, response, body) => {
+  if (err === null) {
+    fs.writeFile(file, body, 'utf8', (fileError) => {
+      if (fileError !== null) {
+        console.log(fileError);
+      }
+    });
   } else {
-    fs.writeFile(filePath, body, 'utf-8');
+    console.log(err);
   }
 });
